@@ -1,5 +1,5 @@
 FROM alpine:latest
-RUN --mount=type=secret,id=SECRET_AUTH_TOKEN
+RUN --mount=type=secret,id=SECRET_AUTH_TOKEN,env
 
 # シークレットを利用するステップ
 RUN echo 1
