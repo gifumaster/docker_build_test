@@ -21,4 +21,4 @@ jobs:
           context: .
           file: ./Dockerfile
           secrets: |
-            "secret_auth_token=${{ secrets.SECRET_AUTH_TOKEN }}"
+            secret_auth_token=${{ secrets.SECRET_AUTH_TOKEN }}          
