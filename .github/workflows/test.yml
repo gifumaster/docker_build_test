@@ -20,7 +20,5 @@ jobs:
           push: false
           context: .
           file: ./Dockerfile
-          env:
-            PUBLIC_AUTH_TOKEN=${{ secrets.SECRET_AUTH_TOKEN }}
           secrets: |
             secret_auth_token=${{ secrets.SECRET_AUTH_TOKEN }}
