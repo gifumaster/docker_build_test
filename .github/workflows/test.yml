@@ -1,0 +1,24 @@
+name: "Deploy Container Test"
+
+on:
+  workflow_dispatch:
+
+env:
+  SECRET_AUTH_TOKEN: ${{ secrets.SECRET_AUTH_TOKEN }}
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          context: .
+          file: ./Dockerfile
+          secrets: |
+            SECRET_AUTH_TOKEN=${{ secrets.SECRET_AUTH_TOKEN }}  
